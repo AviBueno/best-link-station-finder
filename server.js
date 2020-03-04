@@ -10,9 +10,8 @@ const serverController = require( './src/controllers/server' );
 // Prettify JSON output
 app.set('json spaces', 2);
 
-
 // Routes
-app.get( '/', ( req, res ) => res.send( 'Hello, world!' ) );
+app.use( '/', express.static('public') );
 
 app.get( '/demo', serverController.demo );
 

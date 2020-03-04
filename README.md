@@ -4,7 +4,7 @@
 
 Finds the best link station (nearest / with strongest signal) for a given mobile device location in 2D space.
 
-The projest may run in two modes:
+The project may run in two modes:
 
 ### Web server mode
 
@@ -19,6 +19,8 @@ The server support the following API, which is usually REST that returns a JSON 
 * `/device/x/y`<br>
    Find the best link station for a given device's location<br>
    For example: `/device/5/7`
+* `/` (the website's root)<br>
+  A demo page, containing examples for the various API calls.
 
 ### CLI mode
 
