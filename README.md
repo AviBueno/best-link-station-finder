@@ -18,6 +18,10 @@ This is a CLI application, which may be operated in several modes:
    Output the list of link stations that the app is familiar with<br>
    Syntax: `node app.js ls`
 
+### Note
+
+You may run `node app.js --help` for details about the app's various commands and flags.
+
 ## Technical Info
 
 ### Data
@@ -48,3 +52,5 @@ Follow these steps to deploy the project:
 1. Change dir into the project's root directory
 1. Run `npm install`
 1. Run `npm test`
+
+You may now run the application according to the Description and Usage section above.
