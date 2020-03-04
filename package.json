@@ -2,13 +2,15 @@
   "name": "best-link-station-finder",
   "version": "1.0.0",
   "description": "Best link station finder for a given 2D mobile device location",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "jest"
   },
   "author": "Avi Bueno",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
     "yargs": "^15.1.0"
   },
   "devDependencies": {

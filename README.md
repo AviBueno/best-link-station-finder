@@ -4,7 +4,25 @@
 
 Finds the best link station (nearest / with strongest signal) for a given mobile device location in 2D space.
 
-This is a CLI application, which may be operated in several modes:
+The projest may run in two modes:
+
+### Web server mode
+
+To run as a web server the project may be executed using `npm start`.
+
+The server support the following API, which is usually REST that returns a JSON object:
+
+* `/demo`<br>
+   Output the results of a predefined set of device coordinates.<br>
+* `/ls`<br>
+   Output the list of link stations that the app is familiar with
+* `/device/x/y`<br>
+   Find the best link station for a given device's location<br>
+   For example: `/device/5/7`
+
+### CLI mode
+
+This CLI app is executed using `node app.js` and may be operated in several modes:
 
 1. Demo mode<br>
    Output the results of a predefined set of device coordinates.<br>
@@ -17,6 +35,10 @@ This is a CLI application, which may be operated in several modes:
 1. List link stations<br>
    Output the list of link stations that the app is familiar with<br>
    Syntax: `node app.js ls`
+
+### Note
+
+You may run `node app.js --help` for details about the app's various commands and flags.
 
 ## Technical Info
 
@@ -45,6 +67,8 @@ The tests suite may be run using: `npm test`
 Follow these steps to deploy the project:
 
 1. Clone this git repository
-1. Change dir into the projects root directory
+1. Change dir into the project's root directory
 1. Run `npm install`
 1. Run `npm test`
+
+You may now run the application according to the Description and Usage section above.
