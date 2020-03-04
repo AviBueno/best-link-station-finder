@@ -45,6 +45,6 @@ The tests suite may be run using: `npm test`
 Follow these steps to deploy the project:
 
 1. Clone this git repository
-1. Change dir into the projects root directory
+1. Change dir into the project's root directory
 1. Run `npm install`
 1. Run `npm test`
