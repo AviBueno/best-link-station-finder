@@ -4,7 +4,27 @@
 
 Finds the best link station (nearest / with strongest signal) for a given mobile device location in 2D space.
 
-This is a CLI application, which may be operated in several modes:
+The project may run in two modes:
+
+### Web server mode
+
+To run as a web server the project may be executed using `npm start`.
+
+The server support the following API, which is usually REST that returns a JSON object:
+
+* `/demo`<br>
+   Output the results of a predefined set of device coordinates.<br>
+* `/ls`<br>
+   Output the list of link stations that the app is familiar with
+* `/device/x/y`<br>
+   Find the best link station for a given device's location<br>
+   For example: `/device/5/7`
+* `/` (the website's root)<br>
+  A demo page, containing examples for the various API calls.
+
+### CLI mode
+
+This CLI app is executed using `node app.js` and may be operated in several modes:
 
 1. Demo mode<br>
    Output the results of a predefined set of device coordinates.<br>

@@ -15,7 +15,7 @@ class BestLinkStationFinder {
 	 *                               power: <power value>
 	 *                           }
 	 */
-	findBestLinkStation( deviceLoc ) {
+	findBestLinkStation( deviceLoc, withMessageString = false ) {
 		var bestLinkStation = null;
 		var bestLinkPower = 0;
 
@@ -29,25 +29,41 @@ class BestLinkStationFinder {
 			}
 		} );
 
-		return bestLinkStation === null ? null : {
-			linkStation: bestLinkStation,
+		const bestLinkObj = bestLinkStation === null ? null : {
+			station: bestLinkStation,
 			power: bestLinkPower
 		};
+
+		var resObj = {
+			deviceLoc: deviceLoc,
+			bestLink: bestLinkObj,
+		};
+
+		if ( withMessageString ) {
+			resObj.message = this.formatBestLinkStationReportString( resObj, deviceLoc );
+		}
+
+		return resObj;
 	}
 
 	/**
 	 * A utility function that searches for the best link station for a given device
 	 * and return a report string for it.
 	 *
-	 * @param {Point} dl
+	 * @param {Point} deviceLoc
 	 * @returns {string} The report string for either the best link station details or for reporting no link station found.
 	 */
-	getBestLinkStationReportString( dl ) {
-		const res = this.findBestLinkStation( dl );
+	getBestLinkStationReportString( deviceLoc ) {
+		const findResult = this.findBestLinkStation( deviceLoc );
+		return this.formatBestLinkStationReportString( findResult, deviceLoc );
+	}
 
-		if ( res !== null ) {
-			const ls = res.linkStation;
-			return `Best link station for point (${dl.x},${dl.y}) is (${ls.x},${ls.y}) with power ${res.power.toFixed( 2 )}`;
+	formatBestLinkStationReportString( findResult, deviceLoc ) {
+		const dl = deviceLoc;
+
+		if ( findResult.bestLink ) {
+			const ls = findResult.bestLink.station;
+			return `Best link station for point (${dl.x},${dl.y}) is (${ls.x},${ls.y}) with power ${findResult.bestLink.power.toFixed( 2 )}`;
 		}
 
 		return `No link station within reach for point (${dl.x},${dl.y})`;
