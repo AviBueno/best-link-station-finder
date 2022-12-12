@@ -10,7 +10,7 @@
   "author": "Avi Bueno",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "yargs": "^15.1.0"
   },
   "devDependencies": {
